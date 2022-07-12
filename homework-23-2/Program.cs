@@ -5,6 +5,7 @@
         static void Main(string[] args)
         {
             Person person = new Person();
+           
             try
             {
                 Console.WriteLine("Enter Name:");
@@ -19,9 +20,17 @@
                 person.InputDateOfBirth();
                 Console.WriteLine("Enter date of start worked in format - dd.MM.yyyy (Day.Month.Year):");
                 person.InputDateOfStartWorked();
+                TimeSpan userAgeStartWork = person.dateOfStart - person.dateOfBirth;
                 if (person.dateOfBirth > DateTime.Now || person.dateOfStart > DateTime.Now)
                 {
                     throw new Exception("You entered a date that has not yet arrived (future tense)");
+                }
+                person.InputDateOne();
+                person.InputDateTwo();
+                TimeSpan userAge = person.dateTwo - person.dateOne;
+                if (userAgeStartWork < userAge)
+                {
+                    throw new Exception("You have entered incorrect data. How can you work if you are under 16?");
                 }
                 
                 Console.WriteLine("Enter serial number:");

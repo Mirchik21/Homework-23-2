@@ -53,6 +53,25 @@ namespace homework_23_2
             return dateOfStart;
         }
 
+        public DateTime dateOne;
+        public DateTime InputDateOne()
+        {
+            string input;
+            input = "01.01.2000";
+            dateOne = DateTime.ParseExact(input, "dd.MM.yyyy", null, System.Globalization.DateTimeStyles.None);
+            return dateOne;
+        }
+        public DateTime dateTwo;
+        public DateTime InputDateTwo()
+        {
+            string input;
+            input = "01.01.2016";
+            dateTwo = DateTime.ParseExact(input, "dd.MM.yyyy", null, System.Globalization.DateTimeStyles.None);
+            return dateTwo;
+        }
+
+
+
 
     }
 }
